@@ -1,0 +1,156 @@
+<mxfile host="Electron">
+  <diagram name="cast-castle" id="ZmbmcMbCX0jb2OEIgnQA">
+    <mxGraphModel dx="1783" dy="632" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="72TCiBNgs_osm8xsaJ__-1" parent="1" style="swimlane;fontStyle=1;align=center;rounded=1;startSize=40;" value="&lt;&lt;annotation&gt;&gt; &#xa;CastCastleMapper" vertex="1">
+          <mxGeometry height="90" width="200" x="30" y="40" as="geometry">
+            <mxRectangle height="40" width="140" x="30" y="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-38" parent="72TCiBNgs_osm8xsaJ__-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;text-align: left; text-wrap-mode: nowrap;&quot;&gt;Target: CLASS, FUNCTION&lt;/span&gt;&lt;br style=&quot;text-align: left; text-wrap-mode: nowrap;&quot;&gt;&lt;span style=&quot;text-align: left; text-wrap-mode: nowrap;&quot;&gt;Retention: BINARY&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="60" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-3" parent="1" style="swimlane;fontStyle=1;align=center;rounded=1;startSize=40;" value="&lt;&lt;interface&gt;&gt;&#xa;SymbolProcessor" vertex="1">
+          <mxGeometry height="90" width="220" x="330" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-4" parent="72TCiBNgs_osm8xsaJ__-3" style="text;html=1;align=left;" value="+ process(resolver): List" vertex="1">
+          <mxGeometry height="20" width="200" x="10" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-5" parent="1" style="swimlane;fontStyle=1;align=center;rounded=1;" value="CastCastleProcessor" vertex="1">
+          <mxGeometry height="70" width="240" x="720" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-6" parent="72TCiBNgs_osm8xsaJ__-5" style="text;html=1;align=left;" value="- fileWriter: FileWriter&lt;br&gt;- logger: KSPLogger" vertex="1">
+          <mxGeometry height="40" width="230" x="10" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-8" parent="1" style="swimlane;fontStyle=1;align=center;rounded=1;" value="CastCastleProcessorProvider" vertex="1">
+          <mxGeometry height="60" width="230" x="270" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-9" parent="72TCiBNgs_osm8xsaJ__-8" style="text;html=1;align=left;" value="+ create(environment): SymbolProcessor" vertex="1">
+          <mxGeometry height="20" width="230" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-10" edge="1" parent="1" source="72TCiBNgs_osm8xsaJ__-8" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;" target="72TCiBNgs_osm8xsaJ__-5" value="Use">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="835" y="160" as="sourcePoint" />
+            <mxPoint x="835" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-11" parent="1" style="swimlane;fontStyle=1;align=center;rounded=1;" value="ComponentsResolver" vertex="1">
+          <mxGeometry height="80" width="240" x="360" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-13" parent="72TCiBNgs_osm8xsaJ__-11" style="text;html=1;align=left;" value="+ collectAnnotated()&lt;br&gt;+ getMapperInterfaces()" vertex="1">
+          <mxGeometry height="30" width="230" x="10" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-12" parent="72TCiBNgs_osm8xsaJ__-11" style="text;html=1;align=left;" value="- resolver: Resolver" vertex="1">
+          <mxGeometry height="20" width="230" x="10" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-14" edge="1" parent="1" source="72TCiBNgs_osm8xsaJ__-5" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="72TCiBNgs_osm8xsaJ__-11" value="Use">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="140" />
+              <mxPoint x="480" y="140" />
+            </Array>
+            <mxPoint x="720" y="110" as="sourcePoint" />
+            <mxPoint x="260" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-15" parent="1" style="swimlane;fontStyle=1;align=center;rounded=1;" value="FileWriter" vertex="1">
+          <mxGeometry height="70" width="240" x="550" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-17" parent="72TCiBNgs_osm8xsaJ__-15" style="text;html=1;align=left;" value="&lt;div&gt;- codeGenerator: CodeGenerator&lt;/div&gt;+ writeClass(...)&lt;div&gt;+ writeStandaloneFunctions(...)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="230" x="10" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-18" edge="1" parent="1" source="72TCiBNgs_osm8xsaJ__-5" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;" target="72TCiBNgs_osm8xsaJ__-15" value="Use">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="205" />
+              <mxPoint x="665" y="205" />
+            </Array>
+            <mxPoint x="835" y="140" as="sourcePoint" />
+            <mxPoint x="835" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-19" parent="1" style="swimlane;fontStyle=1;align=center;rounded=1;" value="StringViewGenerator" vertex="1">
+          <mxGeometry height="60" width="240" x="760" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-21" parent="72TCiBNgs_osm8xsaJ__-19" style="text;html=1;align=left;" value="+ generateFuncsForMapperClass(): String" vertex="1">
+          <mxGeometry height="20" width="230" x="5" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-20" parent="72TCiBNgs_osm8xsaJ__-19" style="text;html=1;align=left;" value="- mappers: List&lt;MapperMethod&gt;" vertex="1">
+          <mxGeometry height="20" width="230" x="5" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-22" edge="1" parent="1" source="72TCiBNgs_osm8xsaJ__-5" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;" target="72TCiBNgs_osm8xsaJ__-19" value="Use">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="930" y="170" />
+              <mxPoint x="940" y="170" />
+            </Array>
+            <mxPoint x="835" y="200" as="sourcePoint" />
+            <mxPoint x="835" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-23" parent="1" style="swimlane;fontStyle=1;align=center;rounded=1;" value="MapperClass" vertex="1">
+          <mxGeometry height="90" width="210" x="-20" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-24" parent="72TCiBNgs_osm8xsaJ__-23" style="text;html=1;align=left;" value="+ name: String&lt;div&gt;+ packageName: String&lt;/div&gt;&lt;div&gt;+ mappers: List&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="10" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-26" parent="1" style="swimlane;fontStyle=1;align=center;rounded=1;" value="MapperMethod" vertex="1">
+          <mxGeometry height="80" width="215" x="-20" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-27" parent="72TCiBNgs_osm8xsaJ__-26" style="text;html=1;align=left;" value="+ name: String&lt;div&gt;+ sourceParameter: Parameter&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ targetClass: ClassModel&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="200" x="7.5" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-29" parent="1" style="swimlane;fontStyle=1;align=center;rounded=1;" value="ClassModel" vertex="1">
+          <mxGeometry height="85" width="240" x="15" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-30" parent="72TCiBNgs_osm8xsaJ__-29" style="text;html=1;align=left;" value="+ name: String&lt;div&gt;+ parameters: List&lt;/div&gt;&lt;div&gt;+ typeArguments: List&lt;/div&gt;" vertex="1">
+          <mxGeometry height="45" width="200" x="10" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-32" parent="1" style="swimlane;fontStyle=1;align=center;rounded=1;" value="Parameter" vertex="1">
+          <mxGeometry height="80" width="200" x="520" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-33" parent="72TCiBNgs_osm8xsaJ__-32" style="text;html=1;align=left;" value="+ name: String&lt;div&gt;+ classModel: ClassModel&lt;/div&gt;&lt;div&gt;+ hasDefault: Boolean&lt;/div&gt;" vertex="1">
+          <mxGeometry height="55" width="200" x="6" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-41" edge="1" parent="1" source="72TCiBNgs_osm8xsaJ__-11" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" target="72TCiBNgs_osm8xsaJ__-24" value="Use">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="220" y="410" as="sourcePoint" />
+            <mxPoint x="380" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-42" edge="1" parent="1" source="72TCiBNgs_osm8xsaJ__-5" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="72TCiBNgs_osm8xsaJ__-3" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="370" y="390" as="sourcePoint" />
+            <mxPoint x="530" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-47" edge="1" parent="1" source="72TCiBNgs_osm8xsaJ__-32" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="72TCiBNgs_osm8xsaJ__-29" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="260" y="590" as="sourcePoint" />
+            <mxPoint x="270" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-48" edge="1" parent="1" source="72TCiBNgs_osm8xsaJ__-29" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=0.454;exitY=0.009;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="72TCiBNgs_osm8xsaJ__-26" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="55" y="400" as="sourcePoint" />
+            <mxPoint x="215" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-49" edge="1" parent="1" source="72TCiBNgs_osm8xsaJ__-26" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.42;entryY=1.049;entryDx=0;entryDy=0;entryPerimeter=0;" target="72TCiBNgs_osm8xsaJ__-24" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="246" y="436" as="sourcePoint" />
+            <mxPoint x="210" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="72TCiBNgs_osm8xsaJ__-50" edge="1" parent="1" source="72TCiBNgs_osm8xsaJ__-1" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="72TCiBNgs_osm8xsaJ__-11" value="Use">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="150" y="180" as="sourcePoint" />
+            <mxPoint x="310" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,25 @@
+% !TEX TS-program = lualatex
+% !BIB program = biber
+\documentclass{vsureport}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+
+\usepackage{pdfpages}
+
+\begin{document} 
+
+\tableofcontents
+
+\input{0. Введение.tex}
+\input{1. Постановка цели и задач.tex}
+\input{2. Обзор публикаций и существующих решений.tex}
+\input{3. Реализация.tex}
+\input{Заключение.tex}
+
+\printbibliography
+
+% \input{Приложения.tex}
+
+\end{document}
