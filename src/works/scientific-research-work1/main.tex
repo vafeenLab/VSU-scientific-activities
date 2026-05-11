@@ -1,0 +1,59 @@
+% !TEX TS-program = lualatex
+% !BIB program = biber
+\documentclass{vsureport}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+\usepackage{pdfpages} % включение pdf в tex 
+
+% настройка нумерации страниц
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\thepage} % Номера на левых и правых страницах
+\renewcommand{\headrulewidth}{0pt} % Убираем линию
+
+\begin{document} 
+
+% \input{Титульный лист.tex}
+% \input{Титульный лист_opened.tex}
+\includepdf[pages={1}]{Титульный лист.pdf}
+\newpage
+
+\thispagestyle{empty} % без номера страницы
+\tableofcontents
+\newpage
+
+\input{0. Введение.tex}
+\newpage
+
+\input{1. Постановка цели и задач.tex}
+\newpage
+
+\input{2. Обзор публикаций и существующих решений.tex}
+\newpage
+
+\input{3. Предлагаемое решение и его особенности.tex}
+\newpage
+
+\input{4. Анализ средств реализации.tex}
+\newpage
+
+\input{5. Выбор средств реализации.tex}
+\newpage
+
+% \input{6. Этапы работы над проблемой.tex}
+% \newpage
+
+\input{Заключение.tex}
+\newpage
+
+\input{Список используемых источников.tex}
+\newpage
+
+% \input{Приложения.tex}
+% \newpage
+
+\end{document}
